@@ -17,12 +17,12 @@ class PWMMotor(object):
         self.pwm_two = GPIO.PWM(self.pin_two, pwm_freq)
 
     def _move_forward(self, duty_cycle):
-        self.pwm_one.stop()
-        self.pwm_two.start(duty_cycle)
-
-    def _move_backward(self, duty_cycle):
         self.pwm_one.start(duty_cycle)
         self.pwm_two.stop()
+
+    def _move_backward(self, duty_cycle):
+        self.pwm_one.stop()
+        self.pwm_two.start(duty_cycle)
 
     def move(self, speed):
         duty_cycle = abs(speed)
@@ -30,3 +30,8 @@ class PWMMotor(object):
             self._move_backward(duty_cycle)
         else:
             self._move_forward(duty_cycle)
+
+    def stop(self):
+        self.pwm_one.stop()
+        self.pin_two.stop()
+        
