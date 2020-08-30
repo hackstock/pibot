@@ -1,4 +1,9 @@
+import RPi.GPIO as GPIO 
+
 from motor import PWMMotor
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
 
 class PWMTank(object):
 
@@ -13,4 +18,5 @@ class PWMTank(object):
     def stop(self):
         self.left_motor.stop()
         self.right_motor.stop()
-        
+        GPIO.cleanup()
+
