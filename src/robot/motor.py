@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 class PWMMotor(object):
 
     def __init__(self, name, pin_one, pin_two, pwm_freq=1000):
-        
+
         GPIO.setmode(GPIO.BCM)
         GPIO.setwarnings(False)
 
@@ -13,6 +13,9 @@ class PWMMotor(object):
 
         GPIO.setup(self.pin_one, GPIO.OUT)
         GPIO.setup(self.pin_two, GPIO.OUT)
+
+        GPIO.output(self.pin_one, 0)
+        GPIO.output(self.pin_two, 0)
 
         self.pwm_one = GPIO.PWM(self.pin_one, pwm_freq)
         self.pwm_two = GPIO.PWM(self.pin_two, pwm_freq)
@@ -35,4 +38,5 @@ class PWMMotor(object):
     def stop(self):
         self.pwm_one.stop()
         self.pwm_two.stop()
+        
 
