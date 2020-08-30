@@ -9,4 +9,8 @@ class PWMTank(object):
     def move(self, speed):
         self.left_motor.move(speed)
         self.right_motor.move(speed)
+
+    def stop(self):
+        self.left_motor.stop()
+        self.right_motor.stop()
         
