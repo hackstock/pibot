@@ -1,11 +1,12 @@
 import RPi.GPIO as GPIO 
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setwarnings(False)
-
 class PWMMotor(object):
 
     def __init__(self, name, pin_one, pin_two, pwm_freq=1000):
+        
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setwarnings(False)
+
         self.name = name
         self.pin_one = pin_one
         self.pin_two = pin_two
