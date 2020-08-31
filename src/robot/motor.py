@@ -1,4 +1,6 @@
-import RPi.GPIO as GPIO 
+import RPi.GPIO as GPIO
+
+from utils import clip_speed
 
 class PWMMotor(object):
 
@@ -25,16 +27,9 @@ class PWMMotor(object):
         self.forward_pwm.stop()
         self.backward_pwm.start(duty_cycle)
 
-    def _clip_speed(self, speed):
-        if speed < -100:
-            return -100
-        elif speed > 100:
-            return 100
-        else:
-            return speed
 
     def move(self, speed):
-        duty_cycle = abs(self._clip_speed(speed))
+        duty_cycle = abs(clip_speed(speed))
         if speed < 0:
             self._move_backward(duty_cycle)
         else:

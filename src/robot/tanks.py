@@ -13,5 +13,8 @@ class DifferentialDriveTank(object):
     def move(self, speed):
         self.tank.move(speed)
 
+    def spin(self, lm_speed, rm_speed):
+        self.tank.spin(lm_speed, rm_speed)
+
     def stop(self):
         self.tank.stop()

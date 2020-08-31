@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO 
 
 from motor import PWMMotor
+from utils import clip_speed
 
 class PWMTank(object):
 
@@ -15,5 +16,12 @@ class PWMTank(object):
     def stop(self):
         self.left_motor.stop()
         self.right_motor.stop()
+
+    def spin(self, lm_speed, rm_speed):
+        lm_duty_cycle = clip_speed(lm_speed)
+        rm_duty_cycle = clip_speed(rm_speed)
+
+        self.left_motor.move(lm_duty_cycle)
+        self.right_motor.move(rm_duty_cycle)
         
 
