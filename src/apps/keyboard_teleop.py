@@ -20,4 +20,6 @@ def main(stdscr):
         elif key == curses.KEY_ENTER  or key in [10,13]:
             tank.stop()
 
-curses.wrapper(main)
+
+if __name__ == "__main__":
+    curses.wrapper(main)
