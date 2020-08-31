@@ -1,6 +1,6 @@
 import curses
 
-from robot.tanks import DifferentialDriveTank
+import DifferentialDriveTank
 
 def main(stdscr):
     curses.curs_set(0)
