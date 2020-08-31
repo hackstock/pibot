@@ -41,7 +41,7 @@ class PWMMotor(object):
             self._move_forward(duty_cycle)
 
     def stop(self):
-        self.forward_pwm.stop()
-        self.backward_pwm.stop()
+        self.forward_pwm.ChangeDutyCycle(0)
+        self.backward_pwm.ChangeDutyCycle(0)
 
 
