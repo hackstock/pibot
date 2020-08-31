@@ -14,4 +14,4 @@ class DifferentialDriveTank(object):
         self.tank.move(speed)
 
     def stop(self):
-        self.tank.stop
+        self.tank.stop()
