@@ -1,4 +1,5 @@
 from robot_base import PWMTank
+import curses
 
 class DifferentialDriveTank(object):
 
