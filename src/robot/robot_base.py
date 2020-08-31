@@ -4,9 +4,9 @@ from motor import PWMMotor
 
 class PWMTank(object):
 
-    def __init__(self, lm_pin_one, lm_pin_two, rm_pin_one, rm_pin_two):
-        self.left_motor = PWMMotor(name="left_motor", pin_one=lm_pin_one, pin_two=lm_pin_two)
-        self.right_motor = PWMMotor(name="right_motor", pin_one=rm_pin_one, pin_two=rm_pin_two)
+    def __init__(self, lm_fw_pin, lm_bw_pin, rm_fw_pin, rm_bw_pin):
+        self.left_motor = PWMMotor(name="left_motor", forward_pin=lm_fw_pin, backward_pin=lm_bw_pin)
+        self.right_motor = PWMMotor(name="right_motor", forward_pin=rm_fw_pin, backward_pin=rm_bw_pin)
 
     def move(self, speed):
         self.left_motor.move(speed)
