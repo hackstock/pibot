@@ -15,6 +15,5 @@ class PWMTank(object):
     def stop(self):
         self.left_motor.stop()
         self.right_motor.stop()
-        print("tank stopped")
         
 
