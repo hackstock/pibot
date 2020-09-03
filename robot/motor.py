@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 
-from utils import clip_speed
+from robot.utils import clip_speed
 
 class PWMMotor(object):
 

@@ -1,4 +1,4 @@
-from robot_base import PWMTank
+from robot.robot_base import PWMTank
 
 class DifferentialDriveTank(object):
 
