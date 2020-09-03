@@ -1,10 +1,10 @@
 import curses
 
-from robot.robot_base import DifferentialDriveTank
+from robot import robot_base 
 
 def main(stdscr):
     curses.curs_set(0)
-    tank = DifferentialDriveTank()
+    tank = robot_base.DifferentialDriveTank()
 
     while True:
         key = stdscr.getch()
